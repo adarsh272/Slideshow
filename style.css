@@ -1,0 +1,66 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Hide overflow to prevent images from spilling out */
+    position: relative;
+    width: 100%;
+    /* Make container width 100% of the parent */
+    max-width: 500px;
+    /* Restrict max width for larger screens */
+    height: auto;
+    /* Height will be adjusted based on image aspect ratio */
+}
+
+img {
+    width: 100%;
+    /* Make image width 100% of its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    user-select: none;
+    /* Prevent image selection while swiping */
+    cursor: grab;
+    /* Change cursor to grab on hover */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.previous {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
+        /* Use full screen width on smaller screens */
+    }
+
+    img {
+        width: 100%;
+        /* Image takes full width on small screens */
+    }
+
+    button {
+        font-size: 14px;
+        /* Slightly reduce font size on smaller screens */
+        padding: 8px 16px;
+        /* Adjust padding for smaller screens */
+    }
+}
